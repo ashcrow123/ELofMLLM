@@ -1,0 +1,16 @@
+.claude
+.codex
+log/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+sim_storage/
+object_network/
+abstract_image/images/
+test.py
+demo/images/
+main_1.py
+main_2.py
+main_3.py

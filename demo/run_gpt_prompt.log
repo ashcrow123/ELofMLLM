@@ -1,0 +1,216 @@
+2026-04-07 16:25:51,375 [INFO] listener_select started: word=lo-ap, target=cube_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-07 16:26:00,105 [INFO] listener_select output: {
+    "analysis": "The word 'lo-ap' consists of 'lo' and 'ap'. From the LEARNED VOCABULARY, 'lo' is associated with a square (as in 'lo-be' and 'lo-ki'), and 'ap' is associated with red color (as in 'zu-ap' and 'mi-ap'). Therefore, 'lo-ap' likely refers to a red square. Among the CHOICE IMAGES, [D] is a red square, which matches this interpretation.",
+    "option": "D"
+} 
+
+2026-04-07 16:26:00,105 [INFO] listener_select started: word=zu-ap, target=sphere_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>)]
+2026-04-07 16:26:09,142 [INFO] listener_select output: {
+    "analysis": "The word 'zu-ap' consists of the letters 'zu' and 'ap'. From the LEARNED VOCABULARY, 'zu' is associated with spherical shapes (as seen in 'zu-be' and 'zu-ki'), and 'ap' is associated with red color (as seen in 'lo-ap' and 'mi-ap'). Therefore, 'zu-ap' likely refers to a red sphere. Among the CHOICE IMAGES, [B] is a red sphere, which matches this interpretation.",
+    "option": "B"
+} 
+
+2026-04-07 16:26:09,143 [INFO] listener_select started: word=mi-ap, target=tetrahedron_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-07 16:26:14,351 [INFO] listener_select output: {
+    "analysis": "The word 'mi-ap' consists of 'mi' and 'ap'. From the LEARNED VOCABULARY, 'mi' is associated with triangular shapes (e.g., 'mi-be' and 'mi-ki' both show triangles), and 'ap' is associated with red color (e.g., 'lo-ap' and 'zu-ap' both show red objects). Therefore, 'mi-ap' likely refers to a red triangle. Among the CHOICE IMAGES, [A] shows a red triangle, which matches this interpretation.",
+    "option": "A"
+} 
+
+2026-04-07 16:26:14,351 [INFO] listener_select started: word=lo-be, target=cube_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-07 16:26:28,266 [INFO] listener_select output: {
+    "analysis": "The word 'lo-be' consists of 'lo' and 'be'. From the LEARNED VOCABULARY, 'lo' is associated with cubes (e.g., 'lo-ap' is a red cube, 'lo-ki' is a blue cube), and 'be' is associated with green color (e.g., 'zu-be' is a green sphere, 'mi-be' is a green triangle). Therefore, 'lo-be' should represent a green cube. Among the CHOICE IMAGES, [A] is a blue cube, [B] is a green triangle, [C] is a green rectangle (not a cube), [D] is a red sphere, and [E] is a blue sphere. None perfectly match a green cube, but [A] is the only cube, and since 'lo' strongly indicates cube shape, and 'be' might be misassigned or the color is not perfectly represented, [A] is the closest match based on shape. However, re-evaluating, perhaps 'be' modifies color and 'lo' shape, so we need a green cube. Since no green cube is present, we must choose the best available. But wait, looking again, [C] is green but not a cube. Actually, none are green cubes. But in the vocabulary, 'lo-ki' is blue cube, 'lo-ap' is red cube, so 'lo' is cube, and 'be' should be green. The only green object that is 3D is [B] (triangle) and [C] (flat). Since [B] is a 3D shape (triangle in 3D space) but not cube, and [A] is cube but blue, perhaps the system expects shape to dominate. However, let's check if there's a mistake. Alternatively, maybe 'be' is not only color but also shape? No, from 'zu-be' (green sphere) and 'mi-be' (green triangle), 'be' seems to indicate green. So 'lo-be' should be green cube. Since no green cube is available, and [A] is cube (shape correct) but wrong color, while [B] is green but wrong shape, we must choose based on the most consistent pattern. In the vocabulary, when 'lo' is present, it's always a cube, regardless of color. So perhaps the color is secondary. But the task is to select the most likely. Alternatively, maybe I misread. Let's see the images again. [A] is a blue cube, which is similar to 'lo-ki' (blue cube), so 'lo' is cube, 'ki' is blue. 'be' is green, so 'lo-be' should be green cube. Since no green cube, perhaps the answer is not among them? But we must choose. Wait, perhaps [C] is intended to be a cube? No, it's flat. Actually, looking at the images, [A] is a cube, [B] is a tetrahedron or triangular pyramid, [C] is a rectangle, [D] is a sphere, [E] is a sphere. So only [A] and [B] are 3D polyhedra. [A] is cube, [B] is triangular pyramid. 'lo' is cube, so [A] is the only cube. Even though color is wrong, shape is correct. In the vocabulary, 'lo-ap' is red cube, 'lo-ki' is blue cube, so color varies, but shape is always cube for 'lo'. Therefore, 'lo-be' should be a cube, and we choose [A] as the cube, ignoring color mismatch, as shape is the primary indicator for 'lo'.",
+    "option": "A"
+} 
+
+2026-04-07 16:26:28,266 [INFO] listener_select started: word=zu-be, target=sphere_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-07 16:26:33,319 [INFO] listener_select output: {
+    "analysis": "The word 'zu-be' combines 'zu' (which in learned vocabulary is associated with spherical shapes, as seen in 'zu-ap' and 'zu-ki') and 'be' (which in learned vocabulary is associated with green color, as seen in 'lo-be' and 'mi-be'). Therefore, 'zu-be' likely refers to a green sphere. Among the choice images, [E] is the only one that matches this description: a green sphere.",
+    "option": "E"
+} 
+
+2026-04-07 16:26:33,322 [INFO] listener_select started: word=mi-be, target=tetrahedron_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-07 16:26:42,152 [INFO] listener_select output: {
+    "analysis": "The word 'mi-be' consists of 'mi' and 'be'. From the LEARNED VOCABULARY, 'mi-ap' corresponds to a red triangle, and 'lo-be' corresponds to a green cube. The common pattern suggests that 'mi' likely refers to the triangle shape, and 'be' likely refers to the green color. Therefore, 'mi-be' should correspond to a green triangle. Among the CHOICE IMAGES, [B] is a green triangle, which matches this interpretation.",
+    "option": "B"
+} 
+
+2026-04-07 16:26:42,153 [INFO] listener_select started: word=lo-ki, target=cube_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>)]
+2026-04-07 16:26:44,981 [INFO] listener_select output: {
+    "analysis": "The word 'lo-ki' combines 'lo' and 'ki'. From the LEARNED VOCABULARY, 'lo' is associated with a red square (lo-ap, lo-be), and 'ki' is associated with blue shapes (zu-ki, mi-ki). Therefore, 'lo-ki' likely refers to a blue square. Among the CHOICE IMAGES, [E] is a blue cube, which is the closest match to a blue square in 3D form.",
+    "option": "E"
+} 
+
+2026-04-07 16:26:44,981 [INFO] listener_select started: word=zu-ki, target=sphere_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>)]
+2026-04-07 16:26:52,634 [INFO] listener_select output: {
+    "analysis": "The word 'zu-ki' consists of two letters: 'zu' and 'ki'. From the LEARNED VOCABULARY, we can infer that 'zu' likely corresponds to a red object (as seen in 'lo-apzu-apmi-aplo-bezu-bemi-belo-kimi-ki', where 'zu' appears with red shapes) and 'ki' likely corresponds to a sphere or circular shape (as 'ki' appears with spheres in the vocabulary). Image [B] shows a red sphere, which matches the combination of 'zu' (red) and 'ki' (sphere).",
+    "option": "B"
+} 
+
+2026-04-07 16:26:52,634 [INFO] listener_select started: word=mi-ki, target=tetrahedron_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-07 16:26:59,103 [INFO] listener_select output: {
+    "analysis": "The word 'mi-ki' consists of 'mi' and 'ki'. From the LEARNED VOCABULARY, 'mi' is associated with a triangle shape (as seen in 'mi-ap' and 'mi-be'), and 'ki' is associated with blue color (as seen in 'lo-ki' and 'zu-ki'). Therefore, 'mi-ki' should represent a blue triangle. Among the CHOICE IMAGES, [E] is the only one showing a blue triangle.",
+    "option": "E"
+} 
+
+2026-04-07 16:29:59,872 [INFO] speaker_generate started: target=cube_red, vocab_size=8
+2026-04-07 16:30:12,430 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red cube. From the learned vocabulary, 'lo' is associated with cubes (as seen in 'lo-be' for green cube and 'lo-ki' for blue cube). The color red is not directly represented, but 'ap' appears in 'zu-ap' (red sphere) and 'mi-ap' (red triangle), suggesting 'ap' may represent red. Combining these, 'lo-ap' should represent a red cube.",
+    "word": "lo-ap"
+} 
+
+2026-04-07 16:30:12,430 [INFO] speaker_generate started: target=sphere_red, vocab_size=8
+2026-04-07 16:30:18,866 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red sphere. From the learned vocabulary, 'zu' is associated with spheres (as seen in 'zu-be' for green sphere and 'zu-ki' for blue sphere), and 'ap' is associated with red (as seen in 'lo-ap' for red cube and 'mi-ap' for red triangle). Combining these, 'zu-ap' should represent a red sphere, following the pattern of color + shape.",
+    "word": "zu-ap"
+} 
+
+2026-04-07 16:30:18,866 [INFO] speaker_generate started: target=tetrahedron_red, vocab_size=8
+2026-04-07 16:30:23,792 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red triangle. From the learned vocabulary, 'mi' corresponds to triangle shape, and 'ap' corresponds to red color (as seen in 'lo-ap' for red cube and 'zu-ap' for red sphere). Therefore, combining 'mi' for shape and 'ap' for color gives the appropriate word for the red triangle.",
+    "word": "mi-ap"
+} 
+
+2026-04-07 16:30:23,793 [INFO] speaker_generate started: target=cube_green, vocab_size=8
+2026-04-07 16:30:29,598 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green square. From the learned vocabulary, 'lo' corresponds to square shapes, and 'be' corresponds to green color (as seen in zu-be for green sphere and mi-be for green triangle). Therefore, combining 'lo' and 'be' should correctly describe the green square.",
+    "word": "lo-be"
+} 
+
+2026-04-07 16:30:29,599 [INFO] speaker_generate started: target=sphere_green, vocab_size=8
+2026-04-07 16:30:32,110 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green sphere. From the learned vocabulary, 'zu' corresponds to spherical shape (as seen in zu-ap for red sphere and zu-ki for blue sphere), and 'be' corresponds to green color (as seen in lo-be for green cube and mi-be for green triangle). Combining these, 'zu-be' should logically represent a green sphere.",
+    "word": "zu-be"
+} 
+
+2026-04-07 16:30:32,111 [INFO] speaker_generate started: target=tetrahedron_green, vocab_size=8
+2026-04-07 16:30:37,377 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green triangle. From the learned vocabulary, 'mi' corresponds to triangle shapes and 'be' corresponds to green color. Combining these, the word 'mi-be' accurately describes the green triangle.",
+    "word": "mi-be"
+} 
+
+2026-04-07 16:30:37,377 [INFO] speaker_generate started: target=cube_blue, vocab_size=8
+2026-04-07 16:30:42,376 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue square. From the learned vocabulary, 'lo' is associated with square-like shapes (e.g., 'lo-ap' for red square, 'lo-be' for green cube), and 'ki' is associated with blue objects (e.g., 'zu-ki' for blue sphere, 'mi-ki' for blue triangle). Combining 'lo' for shape and 'ki' for color gives a logical word for a blue square.",
+    "word": "lo-ki"
+} 
+
+2026-04-07 16:30:42,376 [INFO] speaker_generate started: target=sphere_blue, vocab_size=8
+2026-04-07 16:30:49,174 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue sphere. From the learned vocabulary, 'zu' corresponds to spherical shapes (as seen in 'zu-ap' for red sphere and 'zu-be' for green sphere), and 'ki' corresponds to blue color (as seen in 'lo-ki' for blue cube and 'mi-ki' for blue pyramid). Therefore, combining 'zu' and 'ki' should correctly describe the blue sphere.",
+    "word": "zu-ki"
+} 
+
+2026-04-07 16:30:49,174 [INFO] speaker_generate started: target=tetrahedron_blue, vocab_size=8
+2026-04-07 16:30:53,260 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue triangular pyramid. From the learned vocabulary, 'mi' corresponds to triangular shapes, and 'ki' corresponds to blue color. Combining these, 'mi-ki' accurately describes the shape and color of the target image.",
+    "word": "mi-ki"
+} 
+
+2026-04-21 21:02:20,513 [INFO] listener_select started: word=lo-ap, target=cube_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-21 21:02:46,544 [INFO] listener_select output: {
+    "analysis": "The word 'lo-ap' consists of the letters 'lo' and 'ap'. From the LEARNED VOCABULARY, 'lo-be' corresponds to a green rectangle, and 'lo-ki' corresponds to a blue cube. The common element 'lo' seems to relate to shape or base form, while 'ap' appears in 'zu-ap' (red sphere) and 'mi-ap' (red triangle), suggesting 'ap' may relate to red color. However, 'lo-ap' is not directly in the vocabulary. Looking at the choice images, [A] is a green cube, which is not directly matched. But since 'lo' appears with 'be' (green rectangle) and 'ki' (blue cube), 'lo' might indicate a rectangular or cubic base. 'ap' might indicate red, but no red cube is present. The closest match by shape and color combination is [A], a green cube, which might be inferred as 'lo' (cube-like) + 'ap' (though color mismatch). Alternatively, if 'ap' is not strictly red, and 'lo' is green, [A] fits best. No exact match exists, but [A] is the most plausible based on 'lo' being associated with green and cubic/rectangular forms.",
+    "option": "A"
+} 
+
+2026-04-21 21:02:46,544 [INFO] listener_select started: word=zu-ap, target=sphere_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-21 21:02:53,571 [INFO] listener_select output: {
+    "analysis": "The word 'zu-ap' consists of 'zu' and 'ap'. From the LEARNED VOCABULARY, 'zu' is associated with spherical shapes (as seen in 'zu-be' and 'zu-ki'), and 'ap' is associated with red color (as seen in 'lo-ap' and 'mi-ap'). Therefore, 'zu-ap' likely refers to a red sphere. Among the CHOICE IMAGES, [C] is a red sphere, which matches this interpretation.",
+    "option": "C"
+} 
+
+2026-04-21 21:02:53,571 [INFO] listener_select started: word=mi-ap, target=tetrahedron_red, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>)]
+2026-04-21 21:03:00,734 [INFO] listener_select output: {
+    "analysis": "The word 'mi-ap' consists of 'mi' and 'ap'. From the LEARNED VOCABULARY, 'mi' is associated with triangular shapes (e.g., 'mi-be' is a green triangle, 'mi-ki' is a blue triangle). 'ap' is associated with red color (e.g., 'lo-ap' is a red cube, 'zu-ap' is a red sphere). Therefore, 'mi-ap' likely refers to a red triangle. Among the CHOICE IMAGES, [C] is a red triangle, which matches this interpretation.",
+    "option": "C"
+} 
+
+2026-04-21 21:03:00,735 [INFO] listener_select started: word=lo-be, target=cube_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>)]
+2026-04-21 21:03:11,148 [INFO] listener_select output: {
+    "analysis": "The word 'lo-be' consists of 'lo' and 'be'. From the LEARNED VOCABULARY, 'lo' is associated with a cube (as in 'lo-ap' and 'lo-ki'), and 'be' is associated with green color (as in 'zu-be' and 'mi-be'). Therefore, 'lo-be' should represent a green cube. Among the CHOICE IMAGES, [B] is a green cube, which matches this interpretation.",
+    "option": "B"
+} 
+
+2026-04-21 21:03:11,149 [INFO] listener_select started: word=zu-be, target=sphere_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-21 21:03:18,210 [INFO] listener_select output: {
+    "analysis": "The word 'zu-be' combines 'zu' (which appears in 'zu-ap' for red sphere and 'zu-ki' for blue sphere) and 'be' (which appears in 'lo-be' for green cube and 'mi-be' for green triangle). Since 'zu' is associated with spheres and 'be' is associated with green objects, 'zu-be' likely refers to a green sphere. Image [E] is the only green sphere among the choices.",
+    "option": "E"
+} 
+
+2026-04-21 21:03:18,211 [INFO] listener_select started: word=mi-be, target=tetrahedron_green, vocab_size=8, shuffled_choices=[demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-21 21:03:29,928 [INFO] listener_select output: {
+    "analysis": "The word 'mi-be' consists of 'mi' and 'be'. From the LEARNED VOCABULARY, 'mi-ap' corresponds to a red triangle, and 'lo-be' corresponds to a green cube. The pattern suggests that the first letter ('mi') indicates shape (triangle) and the second letter ('be') indicates color (green). Therefore, 'mi-be' should represent a green triangle. Among the CHOICE IMAGES, [D] is a green triangle, which matches this interpretation.",
+    "option": "D"
+} 
+
+2026-04-21 21:03:29,928 [INFO] listener_select started: word=lo-ki, target=cube_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-21 21:03:43,696 [INFO] listener_select output: {
+    "analysis": "The word 'lo-ki' combines 'lo' and 'ki'. From the LEARNED VOCABULARY, 'lo' is associated with red square (lo-ap) and green cube (lo-be), suggesting 'lo' may refer to a cube or square shape. 'ki' is associated with blue sphere (zu-ki) and blue triangle (mi-ki), suggesting 'ki' may refer to blue color. Therefore, 'lo-ki' likely refers to a blue cube. Among the CHOICE IMAGES, [D] is a blue cube, which matches this interpretation.",
+    "option": "D"
+} 
+
+2026-04-21 21:03:43,697 [INFO] listener_select started: word=zu-ki, target=sphere_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>)]
+2026-04-21 21:03:49,031 [INFO] listener_select output: {
+    "analysis": "The word 'zu-ki' consists of 'zu' and 'ki'. From the LEARNED VOCABULARY, 'zu' is associated with spherical shapes (as seen in 'zu-ap' and 'zu-be'), and 'ki' is associated with blue color (as seen in 'lo-ki' and 'mi-ki'). Therefore, 'zu-ki' likely refers to a blue sphere. Among the CHOICE IMAGES, [A] is a blue sphere, which matches this interpretation.",
+    "option": "A"
+} 
+
+2026-04-21 21:03:49,031 [INFO] listener_select started: word=mi-ki, target=tetrahedron_blue, vocab_size=8, shuffled_choices=[demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.CUBE: 'cube'>), demo_object(color=<Color.RED: 'red'>, shape=<Shape.SPHERE: 'sphere'>), demo_object(color=<Color.GREEN: 'green'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>), demo_object(color=<Color.BLUE: 'blue'>, shape=<Shape.TETRAHEDRON: 'tetrahedron'>)]
+2026-04-21 21:03:56,094 [INFO] listener_select output: {
+    "analysis": "The word 'mi-ki' consists of 'mi' and 'ki'. From the LEARNED VOCABULARY, 'mi' is associated with triangular shapes (e.g., 'mi-ap' is a red triangle, 'mi-be' is a green triangular pyramid). 'ki' is associated with blue color (e.g., 'lo-ki' is a blue square, 'zu-ki' is a blue sphere). Therefore, 'mi-ki' likely refers to a blue triangular shape. Among the CHOICE IMAGES, [E] is a blue triangular shape, matching the expected combination of 'mi' (triangle) and 'ki' (blue).",
+    "option": "E"
+} 
+
+2026-04-21 21:08:56,910 [INFO] speaker_generate started: target=cube_red, vocab_size=8
+2026-04-21 21:09:12,129 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red cube. From the learned vocabulary, 'lo' is associated with cubes (e.g., 'lo-be' for green cube, 'lo-ki' for blue cube). The color red is associated with 'ap' (e.g., 'zu-ap' for red sphere, 'mi-ap' for red triangle). Therefore, combining 'lo' for cube shape and 'ap' for red color, the word 'lo-ap' should correctly describe the red cube.",
+    "word": "lo-ap"
+} 
+
+2026-04-21 21:09:12,129 [INFO] speaker_generate started: target=sphere_red, vocab_size=8
+2026-04-21 21:09:18,763 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red sphere. From the learned vocabulary, 'zu' is associated with spherical shapes (as seen in 'zu-be' for green sphere and 'zu-ki' for blue sphere), and 'ap' is associated with red color (as seen in 'lo-ap' for red cube and 'mi-ap' for red triangle). Therefore, combining 'zu' for sphere and 'ap' for red should correctly describe the red sphere.",
+    "word": "zu-ap"
+} 
+
+2026-04-21 21:09:18,764 [INFO] speaker_generate started: target=tetrahedron_red, vocab_size=8
+2026-04-21 21:09:24,873 [INFO] speaker_generate output: {
+    "analysis": "The target image is a red triangle. From the learned vocabulary, 'mi' corresponds to triangle shapes, and 'ap' corresponds to red color. Combining these, the word 'mi-ap' should accurately describe the red triangle.",
+    "word": "mi-ap"
+} 
+
+2026-04-21 21:09:24,873 [INFO] speaker_generate started: target=cube_green, vocab_size=8
+2026-04-21 21:09:31,393 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green cube. From the learned vocabulary, 'lo' corresponds to square/cube shapes, and 'be' corresponds to green color. Combining these, 'lo-be' should represent a green cube, following the pattern seen in other shape-color combinations like 'lo-ap' (red cube) and 'zu-be' (green sphere).",
+    "word": "lo-be"
+} 
+
+2026-04-21 21:09:31,394 [INFO] speaker_generate started: target=sphere_green, vocab_size=8
+2026-04-21 21:09:40,335 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green sphere. From the learned vocabulary, 'zu' corresponds to spherical shape (as seen in zu-ap for red sphere and zu-ki for blue sphere), and 'be' corresponds to green color (as seen in lo-be for green cube and mi-be for green triangle). Therefore, combining 'zu' for sphere and 'be' for green gives the appropriate word for the green sphere.",
+    "word": "zu-be"
+} 
+
+2026-04-21 21:09:40,335 [INFO] speaker_generate started: target=tetrahedron_green, vocab_size=8
+2026-04-21 21:09:44,156 [INFO] speaker_generate output: {
+    "analysis": "The target image is a green triangle. From the learned vocabulary, 'mi' corresponds to triangle shape and 'be' corresponds to green color. Combining these two letters forms a word that accurately describes the target image: a green triangle.",
+    "word": "mi-be"
+} 
+
+2026-04-21 21:09:44,156 [INFO] speaker_generate started: target=cube_blue, vocab_size=8
+2026-04-21 21:09:49,583 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue cube. From the learned vocabulary, 'lo' corresponds to cube-like shapes (as seen in 'lo-ap' for red cube and 'lo-be' for green cube). The color blue is associated with 'ki' (as seen in 'zu-ki' for blue sphere and 'mi-ki' for blue triangle). Therefore, combining 'lo' for shape and 'ki' for color gives 'lo-ki' as the most logical word to describe the blue cube.",
+    "word": "lo-ki"
+} 
+
+2026-04-21 21:09:49,584 [INFO] speaker_generate started: target=sphere_blue, vocab_size=8
+2026-04-21 21:09:57,903 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue sphere. From the learned vocabulary, 'zu' corresponds to spherical shape and 'ki' corresponds to blue color. Combining them as 'zu-ki' follows the pattern seen in other entries (e.g., 'zu-ap' for red sphere, 'zu-be' for green sphere). This combination should accurately convey the blue sphere to the other learner.",
+    "word": "zu-ki"
+} 
+
+2026-04-21 21:09:57,903 [INFO] speaker_generate started: target=tetrahedron_blue, vocab_size=8
+2026-04-21 21:10:05,700 [INFO] speaker_generate output: {
+    "analysis": "The target image is a blue triangle. From the learned vocabulary, 'mi' corresponds to triangle shapes and 'ki' corresponds to blue color. Combining these, the word 'mi-ki' should accurately describe the blue triangle.",
+    "word": "mi-ki"
+} 
+
